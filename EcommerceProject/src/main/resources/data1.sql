@@ -1,0 +1,11 @@
+INSERT INTO PRODUCT (name, desc, brand, price, category, release_date, available, qty) VALUES
+                                                                                           ('Laptop Pro X', 'High-performance laptop', 'TechBrand', 1499.99, 'Electronics', DATE '2023-01-15', TRUE, 25),
+                                                                                           ('Smartphone Z10', 'Latest smartphone model', 'PhoneCo', 999.99, 'Mobiles', DATE '2024-03-22', TRUE, 100),
+                                                                                           ('Gaming Mouse', 'RGB wired mouse', 'GearUp', 59.99, 'Accessories', DATE '2022-11-05', TRUE, 150),
+                                                                                           ('Wireless Keyboard', 'Compact wireless keyboard', 'KeyTech', 89.99, 'Accessories', DATE '2023-05-12', TRUE, 80),
+                                                                                           ('4K Monitor', 'Ultra HD display', 'ScreenMax', 349.99, 'Electronics', DATE '2022-09-20', TRUE, 40),
+                                                                                           ('Bluetooth Speaker', 'Portable speaker with bass', 'SoundWave', 129.99, 'Audio', DATE '2023-07-07', TRUE, 60),
+                                                                                           ('Fitness Watch', 'Tracks health and fitness', 'FitTrack', 199.99, 'Wearables', DATE '2024-01-01', TRUE, 75),
+                                                                                           ('Smart TV 55"', 'Smart LED TV with apps', 'VisionTech', 699.99, 'Electronics', DATE '2023-02-14', TRUE, 35),
+                                                                                           ('Gaming Console X', 'Next-gen gaming console', 'GameZone', 499.99, 'Gaming', DATE '2022-12-10', FALSE, 0),
+                                                                                           ('Noise Cancelling Headphones', 'Over-ear headphones', 'SoundWave', 299.99, 'Audio', DATE '2023-04-08', TRUE, 45);
