@@ -13,10 +13,10 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY) //hey jackson plz look at every fields i have and serialize them all
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //best for msql
     private int id;
     private String name;
     private String description;
@@ -29,7 +29,7 @@ public class Product {
     private int stockQuantity;
     private String imageName;
     private String imageType;
-    @Lob
+    @Lob //Large Object
     private byte[] imageData;
 
     public String getImageName() {
