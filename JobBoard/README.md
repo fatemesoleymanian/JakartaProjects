@@ -69,7 +69,7 @@ Base URL: `http://localhost:8080/posts`
 
    ```bash
    git clone https://github.com/fatemesoleymanian/JakartaProjects.git
-   cd JobBoard
+   cd JakartaProjects/JobBoard
    ```
 
 2. Build and run the project:
