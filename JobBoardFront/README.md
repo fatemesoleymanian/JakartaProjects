@@ -42,7 +42,7 @@ src/
 
    ```bash
    git clone https://github.com/fatemesoleymanian/JakartaProjects.git
-   cd JobBoardFront
+   cd JakartaProjects/JobBoardFront
    ```
 
 2. Install dependencies:
