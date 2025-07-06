@@ -68,8 +68,8 @@ Base URL: `http://localhost:8080/posts`
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/yourusername/jobboard-backend.git
-   cd jobboard-backend
+   git clone https://github.com/fatemesoleymanian/JakartaProjects.git
+   cd JobBoard
    ```
 
 2. Build and run the project:
