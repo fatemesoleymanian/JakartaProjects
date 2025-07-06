@@ -106,6 +106,107 @@ spring.data.mongodb.database=springboot
 ⚠️ Replace credentials in production. Use `.env` or external config management for security.
 
 ---
+## 🔍 Full-Text Search with MongoDB Atlas
+
+This project includes **advanced text search** capabilities powered by **MongoDB Atlas Search**.
+
+### 🧠 How it Works
+
+Instead of basic `.find()` queries, this implementation uses the `$search` aggregation stage via a **custom search index** on Atlas.
+
+We define a search repository:
+
+```java
+public interface SearchRepository {
+    List<Post> findByText(String text);
+}
+````
+
+And its custom implementation:
+
+```java
+@Component
+public class SearchRepositoryImplementor implements SearchRepository {
+
+    @Autowired private MongoClient mongoClient;
+    @Autowired private MongoConverter converter;
+    @Autowired private Environment env;
+
+    @Override
+    public List<Post> findByText(String text) {
+        MongoDatabase database = mongoClient.getDatabase(env.getProperty("spring.data.mongodb.database"));
+        MongoCollection<Document> collection = database.getCollection("JobPost");
+
+        AggregateIterable<Document> result = collection.aggregate(List.of(
+            new Document("$search",
+                new Document("index", "default")
+                    .append("text", new Document("query", text)
+                    .append("path", List.of("techs", "desc", "profile")))
+            ),
+            new Document("$sort", new Document("exp", 1)),
+            new Document("$limit", 5)
+        ));
+
+        List<Post> posts = new ArrayList<>();
+        result.forEach(doc -> posts.add(converter.read(Post.class, doc)));
+
+        return posts;
+    }
+}
+```
+
+---
+
+### 🔧 MongoDB Atlas Setup
+
+1. Go to **Atlas > Collections > Search Indexes**
+2. Create a new index named `"default"` on the `JobPost` collection
+3. Sample JSON index definition:
+
+```json
+{
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "techs": { "type": "string" },
+      "desc": { "type": "string" },
+      "profile": { "type": "string" }
+    }
+  }
+}
+```
+
+---
+
+### 🔎 Example Query
+
+Searching for a keyword across fields:
+
+```json
+[
+  {
+    "$search": {
+      "index": "default",
+      "text": {
+        "query": "java",
+        "path": ["techs", "desc", "profile"]
+      }
+    }
+  },
+  { "$sort": { "exp": 1 } },
+  { "$limit": 3 }
+]
+```
+
+---
+
+### ✅ Benefits
+
+* More relevant job search results
+* Indexed and ranked using MongoDB Atlas Search engine
+* Clean integration with Spring Boot via custom repository
+
+---
 
 ## ✨ Features
 
