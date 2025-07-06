@@ -113,8 +113,7 @@ npm test
 
 ## 🧑‍💻 Author
 
-- **Fateme Soleymanian** – [@fatemesoleymanian]([https://github.com/fatemesoleymanian])
-
+* **Fateme Soleymanian** – [@fatemesoleymanian](https://github.com/fatemesoleymanian)
 ---
 
 ## 📃 License
