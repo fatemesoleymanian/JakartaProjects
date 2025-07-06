@@ -15,13 +15,11 @@ It connects to the Spring Boot backend and allows users to **view, add, and sear
 
 ---
 
-## 📦 Project Structure (Basic)
+## 📦 Project Structure
 
 ```text
 src/
-├── components/        → Reusable UI components
-├── pages/             → Page-level components (Home, AddJob, etc.)
-├── services/          → Axios API calls
+├── pages/             → Page-level
 ├── App.js             → App layout & routes
 └── index.js           → Entry point
 ```
@@ -43,8 +41,8 @@ src/
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/yourusername/jobboard-frontend.git
-   cd jobboard-frontend
+   git clone https://github.com/fatemesoleymanian/JakartaProjects.git
+   cd JobBoardFront
    ```
 
 2. Install dependencies:
@@ -94,28 +92,7 @@ The frontend uses Axios to send requests to these endpoints:
 - 🔁 Axios integration with backend
 
 ---
-
-## 📁 Sample File: `services/postService.js`
-
-```js
-import axios from "axios";
-
-const BASE_URL = "http://localhost:8080/posts";
-
-export const getAllPosts = () => axios.get(BASE_URL);
-export const createPost = (postData) => axios.post(BASE_URL, postData);
-export const searchPosts = (text) => axios.get(`${BASE_URL}/search/${text}`);
-```
-
----
-
-## 📷 UI Preview
-
-> You can add screenshots of your app here once the UI is ready.
-
----
-
-## 🧪 Testing (Optional)
+## 🧪 Testing
 
 Basic test setup with React Testing Library:
 
@@ -136,7 +113,7 @@ npm test
 
 ## 🧑‍💻 Author
 
-- **Your Name** – [@yourGitHub](https://github.com/yourGitHub)
+- **Fateme Soleymanian** – [@fatemesoleymanian]([https://github.com/fatemesoleymanian])
 
 ---
 
