@@ -33,8 +33,8 @@ It interacts with the Spring Boot backend to manage products, display a shopping
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/ecommerce-frontend.git
-cd ecommerce-frontend
+git clone https://github.com/fatemesoleymanian/JakartaProjects.git
+cd JakartaProjects/EcommerceFront
 ```
 
 2. **Install dependencies**
