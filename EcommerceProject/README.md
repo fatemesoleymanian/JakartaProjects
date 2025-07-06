@@ -32,7 +32,7 @@ It handles product management including image uploads, product search, and full 
 
 ```bash
 git clone https://github.com/fatemesoleymanian/JakartaProjects.git
-cd EcommerceProject
+cd JakartaProjects/EcommerceProject
 ````
 
 2. **Run the application**
